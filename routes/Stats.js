@@ -6,57 +6,55 @@
 
 // }
 
+class Stats {
 
+  constructor() {
 
-// class Stats {
+    if (Stats._instance) {
+      throw new Error("Singleton classes can't be instantiated more than once.")
+    }
+    Stats._instance = this;
 
-//   constructor() {
+    this._successful_requests = 0;
+    this._invalid_requests = 0;
+    this._stats = {
+      "kanye-quote": 0,
+      "chuck-norris-joke": 0,
+      "name-sum": 0,
+      "joke": 0 
+    };
+  }
 
-//     if (Stats._instance) {
-//       throw new Error("Singleton classes can't be instantiated more than once.")
-//     }
-//     Stats._instance = this;
-
-//     this._successful_requests = 0;
-//     this._invalid_requests = 0;
-//     this._stats = {
-//       "kanye-quote": 0,
-//       "chuck-norris-joke": 0,
-//       "name-sum": 0,
-//       "joke": 0 
-//     };
-//   }
-
-//   increaseStats(surprise){
-//     // Invalid surprise
-//     if (this._stats[surprise] == undefined) {
-//       return;
-//     }
+  increaseStats(surprise){
+    // Invalid surprise
+    if (this._stats[surprise] == undefined) {
+      return;
+    }
     
-//     // valid surprise
-//     this._stats[surprise]++;
-//     return;
-//   }
+    // valid surprise
+    this._stats[surprise]++;
+    return;
+  }
 
-//   increaseSuccessfulRequests() {
-//     this._successful_requests++;
-//   }
+  increaseSuccessfulRequests() {
+    this._successful_requests++;
+  }
 
-//   increaseInvalidStats() {
-//     this._invalid_requests++;
-//   }
+  increaseInvalidStats() {
+    this._invalid_requests++;
+  }
 
-//   statstoJSON()
+  statstoJSON()
   
-// }
+}
 
-// module.exports = Stats;
+module.exports = Stats;
 
 
 
-// /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.json({users: [{name: 'Timmy'}]});
-// });
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.json({users: [{name: 'Timmy'}]});
+});
 
-// module.exports = router;
+module.exports = router;
