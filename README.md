@@ -1,5 +1,6 @@
 # surpriseApi
-The purpose of the API is to return a random response, according to the parameters passed by the client.( name & birth year)
+The purpose of the API is to return a random response, according to the parameters passed by the client.
+- ( name & birth year)
 
 
 # Pre-requisites
@@ -56,14 +57,21 @@ The folder structure of this app is explained below:
 4) you can repeat it and change the properties
 5) when you want to stop- ctrl+c 
 ```
-## Integrate new Surprise
-In case of updating that require new surprise- you need to integrate the next following steps:\
+### Example of inputs:
+```
+ChuckNorris/Name-sum - http://localhost:3000/surprise?name=yarden&birth_year=1994  (0<birth_year<2000)
+Kanye West/ Name-sum - http://localhost:3000/surprise?name=yarden&birth_year=2002   (birth_year>2000 and not start with 'aAzZ')
+joke / Kanye West - http://localhost:3000/surprise?name=QQyarden&birth_year=2009     (birth_year>2000 and not start with 'qQ')
+```
 
-``` Create the Surprise in a new moduld
-    The "surprises" are all inherited from parent SurpriseFrame so make sure you follow the structure.
+## Integrate new Surprise
+In case of adding new surprise- you need to follow the next steps:\
+
+``` Create the Surprise in a new moduld ( url , type and result)
+    The "surprises" are all inherited from parent SurpriseFrame so make sure you follow that structure.
     put the new surprise in the diractory ./routes/surprise
     Add to surpriseRoute -  a pradicate that check all the condtions that are required to choose this surprise
-
+    use module.export in the end of the new surprise
     Add to Stats module to "this.stats=" this class object and the type is needed
 
 ```
