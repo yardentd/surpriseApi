@@ -6,6 +6,7 @@ class SumName extends SurpriseFrame{
     constructor(){
 
         super();
+        this.type = "name-sum"
     }
     getResult(name){
         let sum = 0;

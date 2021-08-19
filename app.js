@@ -3,7 +3,9 @@ const path = require('path');
 const  cookieParser = require('cookie-parser'); // dont need cokie to my project
 const  bodyParser = require('body-parser');
 
-const  surprise = require('./routes/surpriseController');
+const surprise = require('./routes/surpriseRouter');
+const statsRouter = require('./routes/statsRouter');
+
 const port = 3000;
 
 const  app = express();
@@ -13,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 
 app.use('/surprise', surprise);
+
+app.use('/stats',statsRouter);
 
 
 app.listen(port, () => console.log(`listening at http://localhost:${port}`));
