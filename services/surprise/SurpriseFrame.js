@@ -1,4 +1,9 @@
 
+/**
+ *  This class is the father of all kind of surprise types.
+    It contains all the basic methods a surprise instance will require.
+ */
+
 class SurpriseFrame {
 
     constructor(url , type, result) {

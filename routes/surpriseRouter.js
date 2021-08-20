@@ -1,3 +1,10 @@
+/**
+ *  The purpose of this class is to choose a random surprise from a list,
+ *  depending on the username and birth year and send it.
+ */
+
+
+
 
 const ChuckNorris = require('../services/surprise/ChuckNorise');
 const express = require('express');

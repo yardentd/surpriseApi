@@ -1,6 +1,6 @@
 const  express = require('express');
 const path = require('path');
-const  cookieParser = require('cookie-parser'); // dont need cokie to my project
+const  cookieParser = require('cookie-parser'); // My project does not require cookies
 const  bodyParser = require('body-parser');
 
 const surprise = require('./routes/surpriseRouter');

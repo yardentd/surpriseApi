@@ -1,4 +1,8 @@
 
+/**
+ * This class is responsible for validating the input.
+ */
+
 const isParamExists = (string) => typeof string != "undefined";
 const isParamNumber = (string) => !isNaN(string);
 current_year = new Date().getFullYear();

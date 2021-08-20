@@ -1,3 +1,8 @@
+/**
+ *  This class is responsible on all the stats of the rest server.
+    it counts how many https get were occurred to each one of the surprises
+ */
+
 
 class Stats {
 
@@ -39,8 +44,6 @@ class Stats {
   increaseInvalidStats() {
     this._invalid_requests++;
   }
-  
-
   
 }
 
